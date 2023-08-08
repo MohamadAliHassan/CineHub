@@ -2,7 +2,13 @@
 import React from "react";
 
 function MovieList() {
-  return <main>MovieList</main>;
+  return (
+    <main>
+      <div className="text-5xl font-bold underline bg-slate-500">
+        MovieList Hello shiet
+      </div>
+    </main>
+  );
 }
 
 export default MovieList;
