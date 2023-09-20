@@ -1,21 +1,11 @@
 //Denna movielist är ansvarig för every single movie listed in the app. Basically the pattern.
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
-function MovieList() {
-  const [movies, setMovies] = useState([]);
+import useFetch from "../hooks/useFetch";
 
+function MovieList({ apiPath }) {
   //Fetch movies
-  useEffect(() => {
-    async function fetchMovies() {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=3628d113cd1978821077c38747a0606c"
-      );
-      const data = await response.json();
-
-      setMovies(data.results);
-    }
-    fetchMovies();
-  }, []);
+  const { data: movies } = useFetch(apiPath);
 
   return (
     <main>

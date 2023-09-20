@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import backup from "../assets/backup.png";
 
 function Card({ movie }) {
   //Destructuring
   const { id, original_title, overview, poster_path } = movie;
-  const image = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  //condition if cards contain images or not.
+  const image = poster_path
+    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+    : backup;
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3">
       <Link to={`/movie/${id}`}>
