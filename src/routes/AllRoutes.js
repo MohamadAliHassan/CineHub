@@ -8,7 +8,7 @@ import Search from "../pages/Search";
 
 function AllRoutes() {
   return (
-    <div className="dark:bg-slate-800">
+    <div className="dark:bg-darkBG">
       <Routes>
         <Route path="/" element={<MovieList apiPath="movie/now_playing" />} />
         <Route path="/movie/:id" element={<MovieDetail />} />

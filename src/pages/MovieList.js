@@ -11,7 +11,7 @@ function MovieList({ apiPath }) {
     <main>
       <div>
         <section className="max-w-7xl mx-auto py-7">
-          <div className="flex justify-start flex-wrap">
+          <div className="flex flex-wrap others: justify-evenly">
             {/* Mappa/loop genom varje film som fetchas och extract every item*/}
             {movies.map((movie) => (
               <Card key={movie.id} movie={movie} />
